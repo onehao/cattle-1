@@ -35,7 +35,7 @@ public class DeploymentUnitInstanceIdGeneratorImpl implements DeploymentUnitInst
 
     @Override
     public synchronized Integer getNextAvailableId() {
-        Collections.sort(usedIds);
+        Collections.sort(usedIds); //why sort here?
         Integer newId = generateNewId(usedIds);
         usedIds.add(newId);
         Collections.sort(usedIds);
